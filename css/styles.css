@@ -625,14 +625,29 @@ button:focus {
     letter-spacing: 0.03em;
 }
 
-/* .prodject-list .text {
-    color: var(--secondary-text-color);
+.prodject-image {
+    position: relative;
+}
 
+.prodject-list .text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* width: 370px;
+    height: 294px; */
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: var(--secondary-text-color);
+    background-color: rgba(33, 150, 243, 0.9);
     font-weight: normal;
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
-} */
+}
 
 .prodject-list .link {
     text-decoration: none;
