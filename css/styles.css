@@ -23,6 +23,7 @@ html {
     --secondary-text-color: #757575;
     --accent-color: #2196F3;
     --primary-white-color: #ffffff;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 body {
@@ -56,6 +57,10 @@ ul {
     padding-left: 15px;
     }
 
+.no-viev {
+    display: none;
+}
+
 /* Основные заголовки цвет */
 .section-title {
     color: var(--primary-text-color);
@@ -77,10 +82,14 @@ ul {
     display: flex;
     align-items: center;
 }
+.item .nav-link {
+    position: relative;
 
-.site-nav .link {
-    display: inline-block;
-
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: block;
+    
+    height: 80px;
     color: var(--primary-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -89,21 +98,36 @@ ul {
     text-decoration: none;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.nav-link.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus {
     color: var(--accent-color);
 }
 
-.site-nav .link.current {
+.site-nav .nav-link.current {
     color: var(--accent-color);
 }
 
 .site-nav {
     display: flex;
     margin-left: 80px;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
+
 
 .site-nav .item:not(:last-child) {
     margin-right: 50px;
@@ -625,28 +649,32 @@ button:focus {
     letter-spacing: 0.03em;
 }
 
-.prodject-image {
+.prodject-list .item {
     position: relative;
 }
 
 .prodject-list .text {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    opacity: 0;
 
-    /* width: 370px;
-    height: 294px; */
+    width: 370px;
+    height: 294px;
     margin-top: 0;
     margin-bottom: 0;
+    padding: 63px 24px;
 
-    color: var(--secondary-text-color);
+    color: var(--primary-white-color);
     background-color: rgba(33, 150, 243, 0.9);
     font-weight: normal;
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
+}
+
+.prodject-list .text:hover {
+    opacity: 1;
 }
 
 .prodject-list .link {
