@@ -38,11 +38,11 @@ ul {
     list-style: none;
 }
 
-/* img {
+img {
     display: block;
-    width: 100%;
-    height: auto;
-} */
+    /* width: 100%;
+    height: auto; */
+}
 
 .section {
     padding-top: 94px;
@@ -115,6 +115,7 @@ ul {
 .site-nav .nav-link:hover,
 .site-nav .nav-link:focus {
     color: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .site-nav .nav-link.current {
@@ -150,11 +151,13 @@ ul {
 
 .contacts-link:hover .icon {
     fill: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .contacts-link:hover,
 .contacts-link:focus {
     color: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .contacts {
@@ -277,11 +280,20 @@ ul {
 }
 
 .work-list .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
     margin-top: 0;
     margin-bottom: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    width: 370px;
+    height: 70px;
+    text-align: center;
     
     color: var(--primary-white-color);
-    background-color: var(--secondary-text-color);
+    background-color: rgba(47, 48, 58, 0.8);
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -300,8 +312,12 @@ ul {
     margin-top: 0;
 }
 
-.work-list .item:not(:last-child) {
+.work-list .work-item:not(:last-child) {
     margin-right: 30px;
+}
+
+.work-item {
+    position: relative;
 }
 
 /* команда */
@@ -382,6 +398,7 @@ ul {
 
 .social-item:hover {
     background-color: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .social-item:hover .icon {
@@ -405,6 +422,8 @@ ul {
 }
 
 .customer-item {
+    /* transition: 250ms var(--timing-function); */
+
     width: 170px;
     height: 90px;
     color: inherit;
@@ -417,14 +436,17 @@ ul {
 
 .customer-list .icon {
     fill: #AFB1B8;
+    /* transition: 250ms var(--timing-function); */
 }
 
 .customer-item:hover .icon {
     fill: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .customer-item:hover {
     border: 1px solid var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .customer-link {
@@ -565,6 +587,7 @@ footer {
 
 .socials-item:hover {
     background-color: var(--accent-color);
+    transition: 250ms var(--timing-function);
 }
 
 .socials-item .socials-link {
@@ -586,6 +609,8 @@ footer {
 /* Портфолио */
 /* Button */
 button {
+    transition: 250ms var(--timing-function);
+
     border: none;
     border-radius: 4px;
 
@@ -651,13 +676,16 @@ button:focus {
 
 .prodject-list .item {
     position: relative;
+    overflow: hidden;
 }
 
 .prodject-list .text {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
+    /* opacity: 0; */
+    transform: translateY(100%);
+    transition: transform 250ms var(--timing-function);
 
     width: 370px;
     height: 294px;
@@ -671,10 +699,12 @@ button:focus {
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
+    
 }
 
-.prodject-list .text:hover {
-    opacity: 1;
+.item:hover .text {
+    /* opacity: 1; */
+    transform: translateY(0);
 }
 
 .prodject-list .link {
@@ -718,8 +748,4 @@ button:focus {
 
 .prodject-list .item:hover {
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-.card-image {
-    display: block;
 }
